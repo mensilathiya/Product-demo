@@ -1,7 +1,7 @@
 import { useFormik } from "formik"
-import '../assets/css/Login.css'
+// import '../assets/css/Login.css'
 import axios from "axios"
-import { ENDPOINT } from "../config/index"
+import { ENDPOINT } from "../../config/index"
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
@@ -31,7 +31,7 @@ const Login = () => {
             }).then((res) => {
                if (res?.status == 200 && res?.data?.token) {
                   localStorage.setItem('token', res?.data?.token)
-                  localStorage.setItem('userData', JSON.stringify(res?.data))
+                
                   navigate('/user/deshboard')
                }
             }).catch((error) => {
